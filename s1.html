@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <form id="myForm">
+        <input type="text" id="username" placeholder="Enter your Password">
+        <p id="errorMsg" class="error"></p>
+
+        <button type="submit">Submit</button>
+    </form>
+
+
+    <script>
+        const form = document.getElementById("myForm");
+        const input = document.getElementById("username");
+        const errorMsg = document.getElementById("errorMsg");
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            if (input.value.trim() === ""){
+                errorMsg.textContent = "Fill the form";
+                errorMsg.style.color = "red";
+            }
+            else if (input.value.trim().length < 6) {
+                errorMsg.textContent = "Password must be at least 6 characters";
+                errorMsg.style.color = "red";
+            }
+            else {
+                errorMsg.textContent = "Form Submitted";
+                errorMsg.style.color = "green";
+            }
+        });
+Y    </script>
+
+    
+</body>
+</html>

@@ -1,11 +1,105 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, sans-serif;
+        }
+
+        body{
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            background:linear-gradient(to bottom,#87CEEB,#E0F6FF);
+        }
+
+        .container{
+            width:400px;
+            background:white;
+            padding:30px;
+            border-radius:15px;
+            text-align:center;
+            box-shadow:0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        h1{
+            margin-bottom:20px;
+            color:#333;
+        }
+
+        .search-box{
+            display:flex;
+            gap:10px;
+            justify-content:center;
+        }
+
+        input{
+            flex:1;
+            padding:10px;
+            border:1px solid #ccc;
+            border-radius:5px;
+            outline:none;
+        }
+
+        button{
+            padding:10px 15px;
+            border:none;
+            border-radius:5px;
+            background:#2196f3;
+            color:white;
+            cursor:pointer;
+        }
+
+        button:hover{
+            background:#1976d2;
+        }
+
+        #result{
+            margin-top:20px;
+            line-height:2;
+            color:#333;
+        }
+
+        .temp{
+            font-size:35px;
+            font-weight:bold;
+            color:#2196f3;
+        }
+
+    </style>
 </head>
 <body>
-    <h1>Weather API Test</h1>
+
+    <div class="container">
+
+        <h1>🌤 Weather App</h1>
+
+        <div class="search-box">
+            <input
+                type="text"
+                id="city"
+                placeholder="Enter City Name"
+            >
+
+            <button onclick="getWeather()">
+                Search
+            </button>
+        </div>
+
+        <div id="result"></div>
+
+    </div>
 
     <script src="Weather_api.js"></script>
+
 </body>
 </html>
